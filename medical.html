@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with Banner and Products Highlights</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset default padding and margins */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* Main Navigation Bar Styling */
+        .navbar {
+            background-color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 2px -2px gray;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e59866;
+            text-decoration: none;
+        }
+
+        .toggle-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-grow: 1;
+            justify-content: center;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links li a {
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .nav-links li a:hover {
+            color: #e59866;
+        }
+
+        .icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .icons a {
+            color: #333;
+            margin-left: 20px;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        .icons a:hover {
+            color: #e59866;
+        }
+
+        @media (max-width: 768px) {
+            .toggle-btn {
+                display: block;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .icons {
+                margin-top: 10px;
+            }
+        }
+
+        /* Banner Section */
+        .banner-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .banner {
+            width: 100%;
+            height: 300px;
+            background: url('https://via.placeholder.com/1600x400') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .banner-content {
+            text-align: center;
+        }
+
+        .banner h1 {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .banner p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .banner a {
+            padding: 10px 20px;
+            background-color: #d9534f;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        .banner a:hover {
+            background-color: #b52d2a;
+        }
+
+        /* Products Highlights Section */
+        .products {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .products h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .product {
+            width: 30%;
+            margin-bottom: 20px;
+            background-color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .product h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product p {
+            font-size: 16px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .product a {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .product a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            .product {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="#">Logo</a>
+            </div>
+
+            <div class="toggle-btn" onclick="toggleMenu()">&#9776;</div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#partners">Partners</a></li>
+            </ul>
+
+            <div class="icons">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner Section -->
+    <div class="banner-container">
+        <section class="banner">
+            <div class="banner-content">
+                <h1>Welcome to Our Website</h1>
+                <p>Your tagline goes here</p>
+                <a href="#">Learn More</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Products Highlights Section -->
+    <div class="products">
+        <h2>Our Products</h2>
+        <div class="product-list">
+            <!-- Product 1 -->
+            <div class="product">
+                <img src="https://via.placeholder.com/300" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>Amazing product that solves your problems.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <!-- Product 2 -->
+            <div class="product">
+                <img src="https://via.placeholder.com/300" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>This is another great product you will love.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <!-- Product 3 -->
+            <div class="product">
+                <img src="https://via.placeholder.com/300" alt="Product 3">
+                <h3>Product 3</h3>
+                <p>Check out this wonderful product right now.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <!-- Product 4 -->
+            <div class="product">
+                <img src="https://via.placeholder.com/300" alt="Product 4">
+                <h3>Product 4</h3>
+                <p>This is a must-have product for your needs.</p>
+                <a href="#">Learn More
